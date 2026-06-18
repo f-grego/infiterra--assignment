@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
 import CategoryFilter from '../features/CategoryFilter.vue'
 import SortOptions from '../features/SortOptions.vue'
 
