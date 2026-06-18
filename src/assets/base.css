@@ -1,0 +1,121 @@
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+/* Light mode variables */
+:root {
+  --popup-bg: #ffffff;
+  --popup-text: #000000;
+  --popup-border: #dddddd;
+  /*--qty-bg: #dddddd;*/
+  --qty-bg: #d7d7d7;
+  --qty-bg-light: rgba(215, 215, 215, 0.7);
+  --close-bg: #333333;
+  --close-text: #ffffff;
+  --accent: #4d8dff;
+  --selected: #2c3e50;
+  --hover-colored: #3b3e6e;
+  --card-bg: #f2f2f2;
+  --border: #333333;
+  --mobile-nav-bg: rgba(255, 255, 255, 0.75);
+  --bg-secondary: #c0c0c0;
+}
+
+/* Dark mode */
+:root.dark {
+  --color-background: #202020;
+  --bg: #121212;
+  --mobile-nav-bg: #121212;
+  --bg-secondary: #1e1e1e;
+  --text: #f2f2f2;
+  --text-secondary: #bbbbbb;
+  --border: #333333;
+  --accent: #4d8dff;
+  --card-bg: #1a1a1a;
+  --popup-bg: #1e1e1e;
+  --popup-text: #f2f2f2;
+  --qty-bg: #444444;
+  --qty-bg-light: rgba(68, 68, 68, 0.7);
+  --popup-border: #444444;
+  --close-bg: #f2f2f2;
+  --close-text: #121212;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+mark {
+  background-color: #3b3e6e;
+  color: #ffffff;
+  border-radius: 4px;
+}
