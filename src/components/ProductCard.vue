@@ -4,7 +4,8 @@ import { useProductsStore } from '@/stores/products'
 import { useCartStore } from '@/stores/cart.ts'
 import { useHighlight } from '@/composables/useHighlight.ts'
 import { useToast } from '@/composables/useToast.ts'
-import LoadingCardSkeleton from '@/components/features/LoadingCardSkeleton.vue'
+import LoadingCardSkeleton from '@/components/features/loading/LoadingCardSkeleton.vue'
+import EmptyProducts from '@/components/features/EmptyProducts.vue'
 
 const productsStore = useProductsStore()
 const cartStore = useCartStore()
@@ -18,8 +19,8 @@ const add = (id: string) => {
   toast.success('Added to basket!')
 }
 
-onMounted(() => {
-  if (productsStore.paginatedProducts.length === 0) productsStore.fetchAll()
+onMounted( () => {
+  if (productsStore.paginatedProducts.length === 0 && !productsStore.isLoading) productsStore.fetchAllProducts()
 })
 </script>
 
@@ -27,6 +28,10 @@ onMounted(() => {
   <div class="product-list">
     <div v-if="productsStore.isLoading" class="grid">
       <LoadingCardSkeleton />
+    </div>
+
+    <div v-else-if="productsStore.paginatedProducts.length === 0">
+      <EmptyProducts @retry="productsStore.fetchAllProducts()" />
     </div>
 
     <div v-else class="grid fade-in">

@@ -10,5 +10,24 @@
     {
       "path": "./tsconfig.vitest.json"
     }
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "target": "es2022",
+      "moduleDetection": "force",
+
+      "module": "preserve",
+      "resolveJsonModule": true,
+      "allowJs": true,
+      "strict": true,
+      "noImplicitOverride": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "verbatimModuleSyntax": true,
+      "skipLibCheck": true
+    }
+  },
+
+  "include": ["src/**/*"],
+  "exclude": ["src/components/__tests__"]
 }

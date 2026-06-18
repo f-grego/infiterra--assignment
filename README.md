@@ -29,11 +29,27 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Run Express Node Server on Port 8000
+
+```sh
+npm run start
+```
+
+### JSON data can be found after npm run start command
+
+```sh
+http://localhost:8000/products
+http://localhost:8000/categories
+```
+
+### Start the FrontEnd App local
 
 ```sh
 npm run dev
 ```
+
+## Need Both commands to run the project locally
+
 
 ### Type-Check, Compile and Minify for Production
 
@@ -48,7 +64,9 @@ npm run test:unit
 ```
 
 
+## Display product page
 ## Toast Notification Passing Through Store
 ## search highlighting
-## Skeleton Loading on fake fetch products
-## Update Stock & messages by stockStatus
+## Skeleton Loading on fetch products
+## Update Stock & messages by stockStatus on product list bucket & Product page
+## No products found on server fail with recall

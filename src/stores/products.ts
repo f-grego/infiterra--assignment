@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
 import type { Product, Category } from '@/models/types.ts'
-import { products as mockProducts, categories as mockCategories } from '@/constants/mockData.ts'
 
 interface ProductsState {
   products: Product[]
@@ -89,17 +88,28 @@ export const useProductsStore = defineStore('products', {
   },
 
   actions: {
-    async fetchAll() {
+    async fetchAllProducts() {
       try {
         this.isLoading = true
         this.error = null
 
-        await new Promise(resolve => setTimeout(resolve, 1200)) // simulate API delay
-
-        this.products = mockProducts
-        this.categories = mockCategories
+        const response = await window.fetch('http://localhost:8000/products')
+        this.products = (await response.json()) as Product[]
       } catch (err) {
         this.error = 'Failed to load products'
+      } finally {
+        this.isLoading = false
+      }
+    },
+    async fetchAllCategories() {
+      try {
+        this.isLoading = true
+        this.error = null
+
+        const response = await window.fetch('http://localhost:8000/categories')
+        this.categories = (await response.json()) as Category[]
+      } catch (err) {
+        this.error = 'Failed to load categories'
       } finally {
         this.isLoading = false
       }
