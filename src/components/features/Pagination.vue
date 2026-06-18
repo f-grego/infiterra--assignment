@@ -78,7 +78,7 @@ const middlePages = computed(() => {
 
     </div>
 
-    <div class="per-page">
+    <div class="per-page" v-if="store.products.length">
       <label>Per page:</label>
       <select v-model="store.itemsPerPage" @change="store.setPage(1)">
         <option v-for="option in perPageOptions" :key="option.label" :value="option.value">
@@ -159,7 +159,7 @@ button:disabled {
   padding: 0.45rem 0.7rem;
   border-radius: 8px;
   border: 1px solid var(--border);
-  background: var(--bg-secondary);
+  background: goldenrod!important;
   color: var(--text);
   cursor: pointer;
   transition: border-color 0.2s ease;

@@ -4,6 +4,8 @@ import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProductsStore } from '@/stores/products.ts'
 import { useCartStore } from '@/stores/cart.ts'
+import ProductViewLoadingSkeleton from '@/components/features/loading/ProductViewLoadingSkeleton.vue'
+
 
 const route = useRoute()
 const productsStore = useProductsStore()
@@ -42,7 +44,11 @@ const stockStatus = computed(() => {
 </script>
 
 <template>
-  <div v-if="!product" class="not-found">
+  <div v-if="productsStore.isLoading">
+    <ProductViewLoadingSkeleton />
+  </div>
+
+  <div v-else-if="!product" class="not-found">
     Product not found
   </div>
 

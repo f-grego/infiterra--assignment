@@ -78,7 +78,7 @@ export const products: Product[] = [
     description: 'Genuine leather wallet with 6 card slots.',
     price: 29.99,
     categoryId: 'c3',
-    images: ['https://m.media-amazon.com/images/I/61BygHH-M2L._AC_.jpg'],
+    images: ['https://i5.walmartimages.com/seo/Genuine-Leather-Minimalist-Bifold-Wallet-for-Men-Black-Credit-Card-ID-Holder-Slim-Design-with-RFID-Blocking_581fee71-a2a0-4d3b-9715-76bf8e90ed7a.0082796593fd3e6e90ad7d8647bddde4.jpeg'],
     stock: 3,
     rating: 4.4
   },
@@ -88,7 +88,7 @@ export const products: Product[] = [
     description: 'Slim fit, breathable fabric.',
     price: 17.99,
     categoryId: 'c2',
-    images: ['https://i.pinimg.com/originals/75/e2/75/75e2759dabb205d56b2dd279830e0e8a.jpg'],
+    images: ['https://img.magnific.com/premium-photo/solid-basic-tshirt-black-man-unbranded_644450-3490.jpg'],
     stock: 12,
     rating: 4.1
   },
