@@ -93,7 +93,7 @@ export const useProductsStore = defineStore('products', {
         this.isLoading = true
         this.error = null
 
-        const response = await window.fetch('http://localhost:8000/products')
+        const response = await window.fetch(`${import.meta.env.VITE_API_URL}/products`)
         this.products = (await response.json()) as Product[]
       } catch (err) {
         this.error = 'Failed to load products'
@@ -106,7 +106,7 @@ export const useProductsStore = defineStore('products', {
         this.isLoading = true
         this.error = null
 
-        const response = await window.fetch('http://localhost:8000/categories')
+        const response = await window.fetch(`${import.meta.env.VITE_API_URL}/categories`)
         this.categories = (await response.json()) as Category[]
       } catch (err) {
         this.error = 'Failed to load categories'
