@@ -62,11 +62,3 @@ npm run build
 ```sh
 npm run test:unit
 ```
-
-
-## Display product page
-## Toast Notification Passing Through Store
-## search highlighting
-## Skeleton Loading on fetch products
-## Update Stock & messages by stockStatus on product list bucket & Product page
-## No products found on server fail with recall
