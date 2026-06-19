@@ -1,6 +1,6 @@
 # infiterra-assignment
 
-This project is already deployed for simplicity and can be found in the following URL
+This project is already deployed for convenience and easy access, and it can be viewed at the following URL:
 
 ```sh
 https://infiterra-grigoris.netlify.app
