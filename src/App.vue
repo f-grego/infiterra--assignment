@@ -32,8 +32,8 @@ const showCart = ref(false)
 
 const isDark = ref(false)
 
-onMounted(() => {
-  productsStore.fetchAll()
+onMounted(async () => {
+  await productsStore.fetchAll()
 
   // Auto-detect OS theme
   isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
