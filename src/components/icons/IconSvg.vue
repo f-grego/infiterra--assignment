@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps({
   name: {
-    type: String,
+    type: 'shopping-basket' | 'remove-item' | 'arrow-left' | 'arrow-right',
     required: true
   }
 })
