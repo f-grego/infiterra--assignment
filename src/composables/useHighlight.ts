@@ -3,12 +3,25 @@ import { useProductsStore } from '@/stores/products'
 export function useHighlight() {
   const store = useProductsStore()
 
+  const escapeHtml = (value: string): string => {
+    return value
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;')
+  }
+
   const highlight = (text: string) => {
     const q = store.searchQuery.trim()
-    if (!q) return text
+    const escapedText = escapeHtml(text)
 
-    const regex = new RegExp(`(${q})`, 'gi')
-    return text.replace(regex, '<mark>$1</mark>')
+    if (!q) return escapedText
+
+    const escapedQuery = escapeHtml(q)
+    const regex = new RegExp(`(${escapedQuery})`, 'gi')
+
+    return escapedText.replace(regex, '<mark>$1</mark>')
   }
 
   return { highlight }
