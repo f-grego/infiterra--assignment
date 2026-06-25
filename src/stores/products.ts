@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { fetchProductsApi, fetchCategoriesApi } from '@/services/productsService'
 import type { Product, Category } from '@/models/types.ts'
 
 interface ProductsState {
@@ -93,8 +94,7 @@ export const useProductsStore = defineStore('products', {
         this.isLoading = true
         this.error = null
 
-        const response = await window.fetch(`${import.meta.env.VITE_API_URL}/products`)
-        this.products = (await response.json()) as Product[]
+        this.products = await fetchProductsApi()
       } catch (err) {
         this.error = 'Failed to load products'
       } finally {
@@ -106,8 +106,7 @@ export const useProductsStore = defineStore('products', {
         this.isLoading = true
         this.error = null
 
-        const response = await window.fetch(`${import.meta.env.VITE_API_URL}/categories`)
-        this.categories = (await response.json()) as Category[]
+        this.categories = await fetchCategoriesApi()
       } catch (err) {
         this.error = 'Failed to load categories'
       } finally {
